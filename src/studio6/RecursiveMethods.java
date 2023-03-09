@@ -3,7 +3,10 @@ package studio6;
 import edu.princeton.cs.introcs.StdDraw;
 
 public class RecursiveMethods {
-
+	public static void main(String[]args) {
+	
+		System.out.println();
+	}
 	/**
 	 * Computes the geometric sum for the first n terms in the series
 	 * 
@@ -14,7 +17,14 @@ public class RecursiveMethods {
 	public static double geometricSum(int n) {
 		
 			// FIXME compute the geometric sum for the first n terms recursively
+		if(n==0) {
 			return 0;
+		}else if(n==1){
+			return 0.5;
+		}else {
+			return Math.pow(0.5, n)+geometricSum(n-1);	
+		}
+		
 		
 	}
 
@@ -29,8 +39,11 @@ public class RecursiveMethods {
 	public static int gcd(int p, int q) {
 		
 			// FIXME compute the gcd of p and q using recursion
-			return 0;
-		
+		if(p%q==0) {
+			return q;
+		}else {
+			return gcd(q,p%q);
+		}
 	}
 
 	
@@ -44,7 +57,38 @@ public class RecursiveMethods {
 	public static int[] toReversed(int[] array) {
 		
 			// FIXME create a helper method that can recursively reverse the given array
-			return new int[0];
+		int[] reversed = new int[array.length];
+		int lastIndex = array.length - 1;
+		int i;
+		int mirrorIndex;
+		if(array.length==0) {
+			 return new int[0];
+		}else if(array.length==1) {
+			return array;
+		} 
+		return helper(array,0);
+		}
+		
+		if(i==n)
+		   {
+		     return new int[0];
+		   } 
+		   else
+		   {
+			   toReversed(int[] array);
+		   }
+		//we know the gist of it
+
+		
+	}
+	public static int[] helper(int[]array, int index) {
+		if(index>=array.length/2) {
+			return array;
+		}else {
+		reversed[index]=array[array.length-1-index];	
+		}
+		index++;
+		return reversed;
 		
 	}
 
